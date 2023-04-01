@@ -48,9 +48,7 @@ class OnePieceApplicationTests {
 	public void test_film_create() {
 		ShowCharacter create = new ShowCharacter();
 		create.setFirstName("NEW TEST CHARACTER " + Math.random()); // Name is unique
-//		Language lang = new Language();
 		create.setId(create.getId());
-//        	newFilm.setLanguage(lang);
 		ResponseEntity<ShowCharacter> entity = restTest.postForEntity(url, create, ShowCharacter.class);
 		assertEquals(HttpStatus.CREATED, entity.getStatusCode());
 		ShowCharacter showCharacter = (ShowCharacter)entity.getBody();
@@ -61,8 +59,6 @@ class OnePieceApplicationTests {
 	public void test_film_delete() {
 		ShowCharacter newCharacter = new ShowCharacter();
 		newCharacter.setFirstName("NEW CHARACTER TO DELETE");
-//		Language lang = new Language();
-//		lang.setId(1);
 		newCharacter.setId(3);
 		ResponseEntity<ShowCharacter> entity = restTest.postForEntity(url, newCharacter, ShowCharacter.class);
 		assertEquals(HttpStatus.CREATED, entity.getStatusCode());
