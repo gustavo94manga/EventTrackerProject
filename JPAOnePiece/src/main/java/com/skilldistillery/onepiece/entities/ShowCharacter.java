@@ -1,5 +1,6 @@
 package com.skilldistillery.onepiece.entities;
 
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -18,7 +19,16 @@ public class ShowCharacter {
 	private int id;
 	@Column(name="first_name")
 	private String firstName;
-
+	@Column(name="last_name")
+	private String lastName;
+	@Column(name="image_url")
+	private String imageUrl;
+	private Integer age;
+	@Column(name="last_updated")
+	private LocalDateTime lastUpdated;
+	@Column(name="date_added")
+	private LocalDateTime dateAdded;
+	
 	public ShowCharacter() {
 	}
 
@@ -36,6 +46,46 @@ public class ShowCharacter {
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
+	public LocalDateTime getLastUpdated() {
+		return lastUpdated;
+	}
+
+	public void setLastUpdated(LocalDateTime lastUpdated) {
+		this.lastUpdated = lastUpdated;
+	}
+
+	public LocalDateTime getDateAdded() {
+		return dateAdded;
+	}
+
+	public void setDateAdded(LocalDateTime dateAdded) {
+		this.dateAdded = dateAdded;
 	}
 
 	@Override
@@ -57,7 +107,8 @@ public class ShowCharacter {
 
 	@Override
 	public String toString() {
-		return "ShowCharacter [id=" + id + ", firstName=" + firstName + "]";
+		return "ShowCharacter [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", imageUrl="
+				+ imageUrl + ", age=" + age + ", lastUpdated=" + lastUpdated + ", dateAdded=" + dateAdded + "]";
 	}
 	
 	

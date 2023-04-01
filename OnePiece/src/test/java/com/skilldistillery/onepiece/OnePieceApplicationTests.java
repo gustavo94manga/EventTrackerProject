@@ -1,13 +1,21 @@
 package com.skilldistillery.onepiece;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.boot.test.web.client.TestRestTemplate;
 
-@SpringBootTest
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 class OnePieceApplicationTests {
-
+	
+	private static String url = "/api/characters";
+	
+	@Autowired
+	private TestRestTemplate restTest;
+	
 	@Test
-	void contextLoads() {
+	public void test_ListOfCharacters() {
 	}
 
 }
