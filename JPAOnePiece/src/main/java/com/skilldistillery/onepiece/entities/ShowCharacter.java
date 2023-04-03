@@ -28,6 +28,10 @@ public class ShowCharacter {
 	private LocalDateTime lastUpdated;
 	@Column(name="date_added")
 	private LocalDateTime dateAdded;
+//	@Column(name="devil_fruit")
+//	private Integer devilFruit;
+//	@Column(name="organization_id")
+//	private Integer organizationId;
 	
 	public ShowCharacter() {
 	}
@@ -88,6 +92,22 @@ public class ShowCharacter {
 		this.dateAdded = dateAdded;
 	}
 
+//	public Integer getDevilFruit() {
+//		return devilFruit;
+//	}
+//
+//	public void setDevilFruit(Integer devilFruit) {
+//		this.devilFruit = devilFruit;
+//	}
+//
+//	public Integer getOrganizationId() {
+//		return organizationId;
+//	}
+//
+//	public void setOrganizationId(Integer organizationId) {
+//		this.organizationId = organizationId;
+//	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -108,7 +128,7 @@ public class ShowCharacter {
 	@Override
 	public String toString() {
 		return "ShowCharacter [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", imageUrl="
-				+ imageUrl + ", age=" + age + ", lastUpdated=" + lastUpdated + ", dateAdded=" + dateAdded + "]";
+				+ imageUrl + ", age=" + age + ", lastUpdated=" + lastUpdated + ", dateAdded=" + dateAdded;
 	}
 	
 	
