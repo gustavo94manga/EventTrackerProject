@@ -14,6 +14,20 @@ function init() {
 			getSingleCharacter(charaId);
 		}
 	});
+	
+	
+	/*loadAllCharacters();*/
+	document.allCharactersForm.allCharacters.addEventListener('click', function(event) {
+		event.preventDefault();
+		/*let charaId = document.allCharactersForm.charaId.value;
+		console.log(charaId);*/
+		/*if (!isNaN(charaId) && charaId > 0) {
+			getSingleCharacter(charaId);
+		}*/
+		loadAllCharacters();
+	});
+	
+	
 	//Create Character
 	document.newCharacterForm.addCharacterButton.addEventListener('click', function(e) {
 		e.preventDefault();
@@ -37,7 +51,8 @@ function init() {
 		let updateCharacter = {
 			firstName: form.firstName.value,
 			lastName: form.lastName.value,
-			age: form.age.value
+			age: form.age.value,
+			imageUrl: form.imageUrl.value
 		};
 
 		let charaId = form.charaId.value;
@@ -86,11 +101,14 @@ function displaySingleCharacter(singleCharacter) {
 	let h3 = document.createElement('h2');
 	let ul = document.createElement('ul');
 	let li = document.createElement('li');
+	let li2 = document.createElement('li');
 	h2.textContent = singleCharacter.firstName;
 	h3.textContent = singleCharacter.lastName;
 
-	li.textContent = singleCharacter.age;
+	li.textContent = "Age: " + singleCharacter.age;
 	ul.appendChild(li);
+	li2.textContent = "Image URL: " + singleCharacter.imageUrl;
+	li.appendChild(li2);
 
 
 	dataDiv.appendChild(h2);
@@ -129,12 +147,12 @@ function displayCharacterList(characterList) {
 		let tr = document.createElement('tr');
 		tbody.appendChild(tr);
 
-		tr.addEventListener('click', function(e) {
+	/*	tr.addEventListener('click', function(e) {
 			e.preventDefault();
 			let characterId = e.target.parentElement.firstElementChild.textContent;
 			console.log(characterId);
 			getSingleCharacter(characterId);
-		});
+		});*/
 
 		let td = document.createElement('td');
 		td.textContent = chara.id;
