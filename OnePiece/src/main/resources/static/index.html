@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>One Piece</title>
+<script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+
+	<h1>Welcome To One Piece</h1>
+
+	<div id="characterListDiv">
+		<h2>One Piece Characters</h2>
+
+		<form name="characterForm">
+			<input type="number" name="charaId">
+			<button name="lookup">Get Character by Id</button>
+		</form>
+		
+		<form name="updateCharacterForm">
+			<label for="charaId">Character ID: </label>
+			<input type="number" name="charaId"><br>
+			  <label for="firstName">First Name: </label>
+			  <input type="text" name="firstName"><br>
+			
+			  <label for="lastName">Last Name: </label>
+			  <input type="text" name="lastName"><br>
+			
+			  <label for="age">Age: </label>
+			  <input type="number" name="age"><br>
+			
+			  <button name="updateCharacterButton">Update Character</button>
+		</form>
+	
+		
+	<div id="output">
+    	<div id="characterData"></div>
+    </div>
+
+		<table>
+			<thead>
+				<th>ID</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Age</th>
+				<th>Image</th>
+			</thead>
+			<tbody id="characterListBody">
+				<!-- Dynamically fill body in in JS -->
+			</tbody>
+		</table>
+	</div>
+
+	<div id="newCharacterFormDiv">
+		<!-- TODO: new character forms!!!!!  -->
+		<form name="newCharacterForm">
+			<label for="firstName">First Name</label> 
+			<input type="text" name="firstName"><br> 
+			
+			<label for="lastName">Last Name</label> 
+			<input type="text" name="lastName"><br>
+			
+			<label for="imageUrl">Image URL</label> 
+			<input type="text" name="imageUrl"><br>
+			
+			<label for="age">Age</label> 
+			<input type="number" name="age"><br>
+			
+			<button name="addCharacterButton">Add Character</button>
+		</form>
+	</div>
+
+</body>
+</html>
