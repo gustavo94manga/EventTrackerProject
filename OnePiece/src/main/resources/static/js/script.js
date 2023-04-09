@@ -14,8 +14,8 @@ function init() {
 			getSingleCharacter(charaId);
 		}
 	});
-	
-	
+
+
 	/*loadAllCharacters();*/
 	document.allCharactersForm.allCharacters.addEventListener('click', function(event) {
 		event.preventDefault();
@@ -26,8 +26,8 @@ function init() {
 		}*/
 		loadAllCharacters();
 	});
-	
-	
+
+
 	//Create Character
 	document.newCharacterForm.addCharacterButton.addEventListener('click', function(e) {
 		e.preventDefault();
@@ -60,9 +60,9 @@ function init() {
 		console.log(charaId + updateCharacter);
 		updateACharacter(updateCharacter, charaId);
 	});
-	
+
 	//Delete Character
-	document.deleteCharacterForm.deleteCharacter.addEventListener('click', function(e){
+	document.deleteCharacterForm.deleteCharacter.addEventListener('click', function(e) {
 		e.preventDefault();
 		let form = document.deleteCharacterForm;
 		let charaId = form.charaId.value;
@@ -107,7 +107,14 @@ function displaySingleCharacter(singleCharacter) {
 
 	li.textContent = "Age: " + singleCharacter.age;
 	ul.appendChild(li);
-	li2.textContent = "Image URL: " + singleCharacter.imageUrl;
+	let image = document.createElement('img');
+	image.src = singleCharacter.imageUrl;
+	image.alt = singleCharacter.firstName + ' ' + singleCharacter.lastName;
+	image.style.width = '100px';
+	image.addEventListener('click', function() {
+		window.open(singleCharacter.imageUrl);
+	});
+	li2.appendChild(image);
 	li.appendChild(li2);
 
 
@@ -147,12 +154,12 @@ function displayCharacterList(characterList) {
 		let tr = document.createElement('tr');
 		tbody.appendChild(tr);
 
-	/*	tr.addEventListener('click', function(e) {
-			e.preventDefault();
-			let characterId = e.target.parentElement.firstElementChild.textContent;
-			console.log(characterId);
-			getSingleCharacter(characterId);
-		});*/
+		/*	tr.addEventListener('click', function(e) {
+				e.preventDefault();
+				let characterId = e.target.parentElement.firstElementChild.textContent;
+				console.log(characterId);
+				getSingleCharacter(characterId);
+			});*/
 
 		let td = document.createElement('td');
 		td.textContent = chara.id;
@@ -171,8 +178,17 @@ function displayCharacterList(characterList) {
 		tr.appendChild(td3);
 
 		let td4 = document.createElement('td');
-		td4.textContent = chara.imageUrl;
+		let image = document.createElement('img');
+		image.src = chara.imageUrl;
+		image.alt = chara.firstName + ' ' + chara.lastName;
+		image.style.width = '100px';
+		image.addEventListener('click', function() {
+			window.open(chara.imageUrl);
+		});
+		td4.appendChild(image);
 		tr.appendChild(td4);
+		/*td4.textContent = chara.imageUrl;
+		tr.appendChild(td4);*/
 	}
 }
 
@@ -232,8 +248,8 @@ function deleteACharacter(charaId) {
 	xhr.open('DELETE', 'api/characters/' + charaId, true);
 	xhr.onreadystatechange = function() {
 		if (xhr.status === 204 && xhr.readyState === 4) {
-				/*loadAllCharacters();*/
-				console.log("Delete Successful");
+			/*loadAllCharacters();*/
+			console.log("Delete Successful");
 		} else {
 			console.log('Delete Unsuccessful');
 		}

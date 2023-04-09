@@ -1,0 +1,152 @@
+@charset "UTF-8";
+
+body {
+	background: rgb(255,178,66);
+	background: linear-gradient(90deg, rgba(255,178,66,1) 14%, rgba(255,250,0,1) 88%);
+}
+
+#titleHeader {
+	text-align: center;
+}
+
+#output {
+  color: black; 
+  text-align: center; 
+  border: 1px solid black;
+}
+
+ul {
+  list-style: none;
+}
+
+ol {
+  list-style: none;
+}
+
+table {
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+td, th {
+  text-align: center;
+  border: 1px solid black;
+}
+
+.findCharacter {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.findCharacter:hover {
+  background-color: #3e8e41; /* Darker Green */
+}
+
+.findCharacter:active {
+  background-color: #3e8e41; /* Darker Green */
+  transform: translateY(1px);
+}
+
+.characterList {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.characterList:hover {
+  background-color: #3e8e41; /* Darker Green */
+}
+
+.characterList:active {
+  background-color: #3e8e41; /* Darker Green */
+  transform: translateY(1px);
+}
+
+
+
+.updateCharacter {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.updateCharacter:hover {
+  background-color: #3e8e41; /* Darker Green */
+}
+
+.updateCharacter:active {
+  background-color: #3e8e41; /* Darker Green */
+  transform: translateY(1px);
+}
+
+.delectCharacter {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.delectCharacter:hover {
+  background-color: red; /* Darker Green */
+}
+
+.delectCharacter:active {
+  background-color: red; /* Darker Green */
+  transform: translateY(1px);
+}
+
+.addCharacter {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.addCharacter:hover {
+  background-color: blue; /* Darker Green */
+}
+
+.addCharacter:active {
+  background-color: blue; /* Darker Green */
+  transform: translateY(1px);
+}
+

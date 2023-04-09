@@ -3,22 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <title>One Piece</title>
+<link rel="stylesheet" href="main.css">
 <script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
 
-	<h1>Welcome To One Piece</h1>
+	<h1 id="titleHeader">Welcome To One Piece</h1>
 
 	<div id="characterListDiv">
-		<h2>One Piece Characters</h2>
+		<h2 id="titleHeader">One Piece Characters</h2>
 
 		<form name="characterForm">
 			<input type="number" name="charaId">
-			<button name="lookup">Get Character</button>
+			<button class="findCharacter" name="lookup">Get Character</button>
 		</form>
 		
 		<form name="allCharactersForm">
-		<button name="allCharacters">See All Characters</button>
+		<button class="characterList" name="allCharacters">See All Characters</button>
 		</form>
 		
 		<form name="updateCharacterForm">
@@ -35,12 +36,12 @@
 			  <label for="imageUrl">Image URL: </label>
 			  <input type="text" name="imageUrl"><br>
 			
-			  <button name="updateCharacterButton">Update Character</button>
+			  <button class="updateCharacter" name="updateCharacterButton">Update Character</button>
 		</form>
 		
 		<form name="deleteCharacterForm">
 			<input type="number" name="charaId">
-			<button name="deleteCharacter">Delete Character</button>
+			<button class="delectCharacter" name="deleteCharacter">Delete Character</button>
 		</form>
 	
 		
@@ -77,7 +78,7 @@
 			<label for="age">Age</label> 
 			<input type="number" name="age"><br>
 			
-			<button name="addCharacterButton">Add Character</button>
+			<button class="addCharacter" name="addCharacterButton">Add Character</button>
 		</form>
 	</div>
 
