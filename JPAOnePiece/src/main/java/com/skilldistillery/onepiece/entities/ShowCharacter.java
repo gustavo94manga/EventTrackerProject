@@ -10,6 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 @Entity
 @Table(name="show_character")
 public class ShowCharacter {
@@ -24,8 +27,10 @@ public class ShowCharacter {
 	@Column(name="image_url")
 	private String imageUrl;
 	private Integer age;
+	@UpdateTimestamp
 	@Column(name="last_updated")
 	private LocalDateTime lastUpdated;
+	@CreationTimestamp
 	@Column(name="date_added")
 	private LocalDateTime dateAdded;
 //	@Column(name="devil_fruit")

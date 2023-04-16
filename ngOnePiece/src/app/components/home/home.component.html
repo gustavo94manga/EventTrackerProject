@@ -2,3 +2,52 @@
 <ul>
   <li *ngFor="let chara of onePieceCharacters">{{chara.id}} {{chara.firstName}} {{chara.lastName}}</li>
 </ul>
+<h1>
+  <!-- {{ title }}<span [ngClass]="getTodoStyle()"> {{ getTodoCount() }}</span> -->
+</h1>
+
+
+<div *ngIf="!selected">
+  <table class="table table-striped table-hover">
+    <thead>
+      <th>Task</th>
+      <!-- <th>Mark</th> -->
+      <!-- <th>Completed</th> -->
+      <th>Delete</th>
+    </thead>
+    <tbody>
+      <tr [ngClass]="chara.completed ? 'complete' : ''" *ngFor="let chara of onePieceCharacters">
+        <td (click)="displayOnePieceCharacter(chara)">{{ chara.firstName}} {{ chara.lastName}}</td>
+        <!-- <td><input (change)="updateOnePieceCharacter(chara, false)" type="checkbox" name="completed" [(ngModel)]="chara.completed"></td> -->
+        <td>{{ chara.completed }}</td>
+        <td><button class="btn btn-danger" (click)="deleteOnePieceCharacter(chara.id)">x</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <form>
+    <input type="text" name="task" [(ngModel)]="newCharacter.firstName">
+    <button class="btn btn-primary" (click)="addOnePieceCharacter(newCharacter)">Add Character</button>
+  </form>
+  <!-- showCompleted: <input type="checkbox" [(ngModel)]="showComplete"> -->
+</div>
+
+<div id="characterDetail" *ngIf="selected && !editCharacter">
+  <h4>Id: {{ selected.id }}</h4>
+  <h4>First Name: {{ selected.firstName }}</h4>
+  <h4>Last Name: {{ selected.lastName }}</h4>
+  <!-- <h4>Completed: {{ selected.completed }}</h4> -->
+  <button (click)="displayTable()">Return</button>
+  <button (click)="setEditOnePieceCharacter()">Edit</button>
+</div>
+
+<div id="characterEdit" *ngIf="editCharacter">
+  <form>
+    <!-- <input type="number" name="id" [(ngModel)]="editTodo.id"> -->
+    <input type="text" name="firstName" [(ngModel)]="editCharacter.firstName"><br>
+    <input type="text" name="lastName" [(ngModel)]="editCharacter.lastName"><br>
+    <label for="completed">Completed</label>
+    <input type="checkbox" name="completed" [(ngModel)]="editCharacter.completed"><br>
+    <button (click)="editCharacter = null">Cancel</button>
+    <button (click)="updateOnePieceCharacter(editCharacter)">Save</button>
+  </form>
+</div>
