@@ -41,8 +41,7 @@
 </div>
 
 <div id="characterEdit" *ngIf="editCharacter">
-  <form>
-    <!-- <input type="number" name="id" [(ngModel)]="editTodo.id"> -->
+  <form class="table table-striped">
     <input type="text" name="firstName" [(ngModel)]="editCharacter.firstName"><br>
     <input type="text" name="lastName" [(ngModel)]="editCharacter.lastName"><br>
     <label for="completed">Completed</label>
